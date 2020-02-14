@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>K3Channel</id>
+    <version>$version$</version>
+    <title>Kaitrade Channel</title>
+    <authors>KaiTrade LLC</authors>
+    <owners>KaiTrade LLC</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Channel</description>
+    <releaseNotes>First Release</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>Channel</tags>
+  </metadata>
+</package>
