@@ -1,4 +1,4 @@
-﻿cd C:\Users\junwin\Source\Workspaces\K3Base\K3Channel
+﻿cd C:\Users\junwi\source\sandpit\K3Channel
 del *.nupkg
-nuget pack  K3Channel.csproj -IncludeReferencedProjects
-NuGet Push K3Channel*.nupkg
+.nuget\nuget pack  K3Channel.csproj -IncludeReferencedProjects
+.nuget\NuGet Push K3Channel*.nupkg
