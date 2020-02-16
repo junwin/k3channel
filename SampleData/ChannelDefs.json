@@ -1,0 +1,116 @@
+{
+  "ChannelDefinitions": [
+    {
+      "ChannelName": "DriverSender",
+      "HostName": "127.0.0.1",
+      "Port": 0,
+      "ExchangeName": "KTDefault",
+      "Name": "INFO.",
+      "TypeName": "mem"
+    },
+    {
+      "ChannelName": "MEM",
+      "HostName": "127.0.0.1",
+      "Port": 0,
+      "ExchangeName": "KTDefault",
+      "Name": "INFO.",
+      "TypeName": "mem"
+    },
+    {
+      "ChannelName": "RMQ",
+      "HostName": "10.1.11.19",
+      "Port": 5672,
+      "ExchangeName": "KTDefault",
+      "Name": "INFO.",
+      "TypeName": "K3Channel.RMQChannel"
+    },
+    {
+      "ChannelName": "DEFAULT",
+      "HostName": "127.0.0.1",
+      "Port": 0,
+      "ExchangeName": "KTDefault",
+      "Name": "INFO.",
+      "TypeName": "mem"
+    },
+    {
+      "ChannelName": "MSB",
+      "HostName": "Endpoint=sb://k3data.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=YdCmLwMmMhgkY3HIiZ5AoCwZQOyOBGA+LyDvgrE5sN4=",
+      "Port": 0,
+      "ExchangeName": "KTDefault",
+      "Name": "textxyz",
+      "TypeName": "K3Channel.MSBChannel"
+    },
+    {
+      "ChannelName": "MSTOPIC",
+      "HostName": "Endpoint=sb://k3data.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=YdCmLwMmMhgkY3HIiZ5AoCwZQOyOBGA+LyDvgrE5sN4=",
+      "Port": 0,
+      "ExchangeName": "KTDefault",
+      "Name": "textzzz",
+      "TypeName": "K3Channel.MSTopicChannel"
+    },
+    {
+      "ChannelName": "ControllerListener",
+      "HostName": "10.1.11.19",
+      "Port": 5672,
+      "ExchangeName": "KTDefault",
+      "Name": "CTRLLR.",
+      "TypeName": "K3Channel.RMQChannel"
+    },
+    {
+      "ChannelName": "DriverMessage",
+      "HostName": "10.1.11.19",
+      "Port": 0,
+      "ExchangeName": "KTDefault",
+      "Name": "INFO.",
+      "TypeName": "K3Channel.RMQChannel"
+    },
+    {
+      "ChannelName": "Prices",
+      "HostName": "10.1.11.19",
+      "Port": 0,
+      "ExchangeName": "KTDefault",
+      "Name": "PX.",
+      "TypeName": "K3Channel.RMQChannel"
+    },
+    {
+      "ChannelName": "Product",
+      "HostName": "10.1.11.19",
+      "Port": 0,
+      "ExchangeName": "KTDefault",
+      "Name": "PRD.",
+      "TypeName": "K3Channel.RMQChannel"
+    },
+    {
+      "ChannelName": "BarData",
+      "HostName": "10.1.11.19",
+      "Port": 0,
+      "ExchangeName": "KTDefault",
+      "Name": "TS.",
+      "TypeName": "K3Channel.RMQChannel"
+    },
+    {
+      "ChannelName": "TradeSignal",
+      "HostName": "10.1.11.19",
+      "Port": 0,
+      "ExchangeName": "KTDefault",
+      "Name": "TR.",
+      "TypeName": "K3Channel.RMQChannel"
+    },
+    {
+      "ChannelName": "ConnectionStatusUpdate",
+      "HostName": "10.1.11.19",
+      "Port": 0,
+      "ExchangeName": "KTDefault",
+      "Name": "INFO.",
+      "TypeName": "K3Channel.RMQChannel"
+    },
+    {
+      "ChannelName": "Account",
+      "HostName": "10.1.11.19",
+      "Port": 0,
+      "ExchangeName": "KTDefault",
+      "Name": "ACCT.",
+      "TypeName": "K3Channel.RMQChannel"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using log4net;
 using Moq;
 using K3Channel;
+using System.Collections.Generic;
 
 namespace K3ChannelTest
 {
@@ -12,13 +13,13 @@ namespace K3ChannelTest
         private int msgCount = 0;
         private int statusCount = 0;
         private ILog log;
-        private IChannelDefinitionSettings cdSettings;
+        private List<IChannelDefinition> cdSettings;
         private ChannelState channelState = ChannelState.none;
 
         public RMQChannelTest()
         {
             log = Mock.Of<ILog>();
-            cdSettings = new ChannelDefinitionSettings();
+            cdSettings = new List<IChannelDefinition>();
             
             TestScafold.SetChannelDefinitionDefaults(cdSettings);
         }

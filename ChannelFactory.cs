@@ -6,20 +6,22 @@ namespace K3Channel
 {
     public class ChannelFactory : IChannelFactory
     {
-        private IChannelDefinitionSettings settings;
+ 
         private ILog log;
         private Dictionary<string, IChannelDefinition> channelDefinitions;
 
-        public ChannelFactory(IChannelDefinitionSettings settings, ILog log)
+        public Dictionary<string, IChannelDefinition> ChannelDefinitions { get => channelDefinitions; set => channelDefinitions = value; }
+
+        public ChannelFactory(List<IChannelDefinition> settings, ILog log)
         {
             this.log = log;
-            this.settings = settings;
-            channelDefinitions = new Dictionary<string, IChannelDefinition>();
-            foreach (var def in settings.ChannelDefinitions)
+
+            ChannelDefinitions = new Dictionary<string, IChannelDefinition>();
+            foreach (var def in settings)
             {
-                if (!channelDefinitions.ContainsKey(def.ChannelName))
+                if (!ChannelDefinitions.ContainsKey(def.ChannelName))
                 {
-                    channelDefinitions.Add(def.ChannelName, def);
+                    ChannelDefinitions.Add(def.ChannelName, def);
                 }
                 else
                 {
@@ -36,9 +38,9 @@ namespace K3Channel
 
         public IChannel Create(string channelName, string exchangeName, string name)
         {
-            if (channelDefinitions.ContainsKey(channelName))
+            if (ChannelDefinitions.ContainsKey(channelName))
             {
-                var modelDef = channelDefinitions[channelName];
+                var modelDef = ChannelDefinitions[channelName];
                 IChannelDefinition overridenDef = new ChannelDefinition(channelName, modelDef.HostName, modelDef.Port, exchangeName, name, modelDef.TypeName);
                 var channel = ConstructChannel(overridenDef);
                 return channel;
@@ -51,15 +53,17 @@ namespace K3Channel
 
         public IChannel Create(string channelName)
         {
-            if (channelDefinitions.ContainsKey(channelName))
+            if (ChannelDefinitions.ContainsKey(channelName))
             {
-                return ConstructChannel(channelDefinitions[channelName]);
+                return ConstructChannel(ChannelDefinitions[channelName]);
             }
             else
             {
                 return null;
             }
         }
+
+        
 
         public IChannel ConstructChannel(IChannelDefinition def)
         {

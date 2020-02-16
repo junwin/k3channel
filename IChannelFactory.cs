@@ -13,5 +13,7 @@ namespace K3Channel
         IChannel Create(string exchangeName, string name);
 
         IChannel Create(string channelName, string exchangeName, string name);
+
+        Dictionary<string, IChannelDefinition> ChannelDefinitions { get; set; }
     }
 }

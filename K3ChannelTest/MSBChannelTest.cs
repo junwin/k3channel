@@ -4,6 +4,7 @@ using K3Channel;
 using Moq;
 using log4net;
 using K3Channel;
+using System.Collections.Generic;
 
 namespace K3ChannelTest
 {
@@ -12,12 +13,12 @@ namespace K3ChannelTest
     {
         int msgCount = 0;
          private ILog log;
-        private IChannelDefinitionSettings cdSettings;
+        private List<IChannelDefinition> cdSettings;
 
         public MSBChannelTest()
         {
             log = Mock.Of<ILog>();
-            cdSettings = new ChannelDefinitionSettings();
+            cdSettings = new List<IChannelDefinition>();
             
             TestScafold.SetChannelDefinitionDefaults(cdSettings);
         }
